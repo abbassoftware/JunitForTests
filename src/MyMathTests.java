@@ -14,35 +14,35 @@ public class MyMathTests {
     }
 
     @Test
-    public void test_add_valid() {
+    public void testAddingTwoPositiveNumbers() {
         MyMath myMath = new MyMath();
-        int result = myMath.add(5, 6);
+        int result = myMath.addTwoNumbers(5, 6);
         assertEquals(result, 11);
     }
 
     @Test
-    public void test_max_valid() {
+    public void testMaxNumberFromAnArray() {
         // int a [] = new int[]{11, 15 , 2, 3};
         MyMath myMath = new MyMath();
-        int max = myMath.findMax(a);
+        int max = myMath.findMaxNumberFromArray(a);
         assertEquals(max, 15);
 
     }
 
     @Test
-    public void test_sort_valid() {
+    public void testSortingOfAnArray() {
         // int a [] = new int[]{11, 15 , 2, 3};
         int sortedReference[] = new int[] { 2, 3, 11, 15 };
         MyMath myMath = new MyMath();
-        myMath.sort(a);
+        myMath.sortAnArray(a);
         assertArrayEquals(a, sortedReference);
     }
 
     @Test
-    public void test_add_exception1() {
+    public void testAddingOfNegativeNumber1() {
         try {
             MyMath myMath = new MyMath();
-            int result = myMath.add(-5, 6);
+            int result = myMath.addTwoNumbers(-5, 6);
             fail("Should have got an UnsupportedOperationException");
         } catch (UnsupportedOperationException e) {
             // Pass - UnsupportedOperationException is expected.
@@ -51,9 +51,9 @@ public class MyMathTests {
     }
 
     @Test(expected = UnsupportedOperationException.class)
-    public void test_add_exception2() {
+    public void testAddingOfNegativeNumber2() {
         MyMath myMath = new MyMath();
-        int result = myMath.add(-5, 6);
+        int result = myMath.addTwoNumbers(-5, 6);
     }
 
     @After
