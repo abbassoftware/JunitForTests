@@ -10,7 +10,7 @@ public class BooksLibraryTests {
 
     private BooksLibrary booksLibrary = null; 
 
-    //@Before
+    @Before
     public void setup() {
         booksLibrary = new BooksLibrary();
         
@@ -52,7 +52,7 @@ public class BooksLibraryTests {
     
     
 
-    //@Test
+    @Test
     public void testFindBookFromLibrary() {
         Book book = booksLibrary.findBook("1607747308");
         assertNotNull(book);
@@ -60,14 +60,14 @@ public class BooksLibraryTests {
 
     }
 
-    //@Test
+    @Test
     public void testFindBookWithMaximumQuantity() {
         Book book = booksLibrary.findBookWithMaximumQuantity();
         assertNotNull(book);
         assertEquals(book.getIsbn(), "0312510780");
     }
     
-    //@Test
+    @Test
     public void testAddingBookWithNegativeQuantity1() {
         try {
             Book book = new Book();
@@ -83,7 +83,7 @@ public class BooksLibraryTests {
 
     }
 
-    //@Test(expected = UnsupportedOperationException.class)
+    @Test(expected = UnsupportedOperationException.class)
     public void testAddingBookWithNegativeQuantity2() {
         Book book = new Book();
         book.setIsbn("1338029992");
@@ -94,7 +94,7 @@ public class BooksLibraryTests {
     }
 
     
-    //@After
+    @After
     public void cleanup() {
         booksLibrary = null;
     }
